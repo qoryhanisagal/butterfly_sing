@@ -1,5 +1,23 @@
 # 🦋 Flask App + Git + SSH: Class 1 Notes
 
+---
+
+### 📝 Overview
+
+This project is part of **Class 1** in the Full Stack Development Immersion program. It introduces foundational concepts in Flask, Git, and SSH through the creation of a simple web application. The app is designed to demonstrate how to:
+
+- Structure a Flask project using best practices
+- Create and test HTTP GET routes
+- Return data using Python dictionaries formatted as JSON
+- Use Git to track and commit changes
+- Generate and add an SSH key to GitHub for secure version control
+
+The application includes two routes:
+- `/` – A welcome message with guidance
+- `/aboutme` – A profile dictionary returned as a JSON response
+
+---
+
 ## 🚀 Flask Basics: Starting a Web Application
 
 ### 1. Importing from Flask
@@ -35,6 +53,34 @@ def profile():
 ```
 - This returns the dictionary to the client.
 - Flask automatically converts it into a **JSON response**.
+
+---
+
+### 📌 Routes
+
+#### 🔗 `/` (Root Route)
+- **Method**: `GET`
+- **Description**: Returns a welcome message and provides guidance on where to go next.
+- **Example Response**:
+```json
+{
+  "message": "Welcome to my Flask app ✨",
+  "try": "/aboutme to view my profile"
+}
+```
+
+#### 🔗 `/aboutme`
+- **Method**: `GET`
+- **Description**: Returns a JSON representation of my profile using a Python dictionary.
+- **Example Response**:
+```json
+{
+  "first_name": "Koiree",
+  "last_name": "Descoteaux",
+  "hobbies": ["reading", "cooking", "hiking"],
+  "is_online": true
+}
+```
 
 ---
 
@@ -179,3 +225,17 @@ git push -u origin main
 - `-u` sets `origin main` as the **default upstream**, so next time you can just use `git push`
 
 ---
+
+### 💬 My Reflection
+
+In this first class project, I focused on building a foundational understanding of how Flask works and how to structure a real-world web application from the ground up. I learned how to:
+
+- Create a Flask app using object-oriented principles by initializing the app inside an `__init__.py` file and importing route logic from a separate module. This taught me how scalable projects are built using clean, modular code.
+- Define HTTP GET routes using `@app.get()` and return responses using Python dictionaries. Flask automatically converted the dictionary to a JSON response, which helped me understand how back-end APIs serve data to clients.
+- Organize files using a project structure that mirrors professional applications, including separating logic across `run.py`, `__init__.py`, and `routes.py`.
+- Use Git confidently by initializing a repository, staging files, writing clear commit messages, and pushing my work to GitHub. I also learned how to commit changes incrementally to show progress and intentionality — instead of lumping everything into one commit.
+- Set up SSH for GitHub so I can push securely without entering my username and password every time. This step was challenging at first but taught me about the value of developer automation and security.
+
+What stood out most to me was how everything connects — setting up routes in Flask required me to think in Python, but organizing the project and pushing it to GitHub made me think like a developer working in the real world. Every file, command, and decision became part of a bigger picture.
+
+This project gave me a strong sense of ownership and clarity. I’m proud of how I structured the code, documented my learning, and brought everything together using Git. It’s a great foundation to build on for future classes.
