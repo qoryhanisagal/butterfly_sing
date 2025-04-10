@@ -1,26 +1,21 @@
-from flask import Flask  # ✅ Import the Flask class from the flask package
+from app import app  
+# I'm importing the 'app' object that I created in __init__.py.
+# This gives me access to use decorators like @app.get() to define routes.
 
-# 🧠 OOP Reminder:
-# A class is a blueprint for creating web applications.
-# The Flask class has methods and attributes that define the app's behavior.
+@app.get("/aboutme")  
+# I'm creating a route that listens for GET requests at the URL '/aboutme'.
+# This means when someone visits /aboutme in the browser, the function below will run.
 
-app = Flask(__name__)  # ✅ Create an instance of the Flask class (app is now an object)
-# All properties and methods of the Flask class are now available to the 'app' object.
-# __name__ is a special (magic/thunder) built-in variable in Python that represents the name of 
-# the current module being executed. 
-# If run directly, __name__ becomes '__main__'
+def profile():  
+    # This is my view function — it handles what should happen when someone visits /aboutme.
+    # In this case, I'm returning a dictionary with my basic profile info.
 
-@app.get("/")  # ✅ Flask decorator that maps HTTP GET requests for the root URL ("/") to the view function below
-# The @app.get("/") decorator is a wrapper function that takes 'profile' as input and returns a new wrapped function.
-# This route handles the homepage or base URL of my web application.
-
-def profile():  # ✅ This is a view function — it gets called when someone visits the root URL
-    me = {  # ✅ Python dictionary representing a user profile
+    me = {
         "first_name": "Koiree",
         "last_name": "Descoteaux",
         "hobbies": ["reading", "cooking", "hiking"],
         "is_online": True,
     }
 
-    # ✅ Flask automatically converts dictionaries to JSON responses when returned from a view function
-    return me
+    return me  
+    # Flask automatically converts this dictionary to JSON and sends it as the HTTP response.
