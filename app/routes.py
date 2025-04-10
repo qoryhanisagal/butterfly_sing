@@ -1,22 +1,25 @@
-from flask import     # From the flask package imprt the Flask class
-# OPP class is a blueprint for creating web applications.
-# class  consists of methods and attributes that define the behavior of the application.
+from flask import Flask  # ✅ Correct: Import the Flask class from the lowercase 'flask' package
 
-app = Flask(__name__) # Create an instance of the Flask class (app is now a object)
-# All properties and methods of the Flask class are now available to the app object.
-# The __name__ variable is a special(thunder or magic)  built-in variable in Python that represents the name of 
-# Python module that is currently being executed. It is a directory with Python files.
-# A package is a collection of Python modules organized in a directory hierarchy.
+# 🧠 OOP Reminder:
+# A class is a blueprint for creating web applications.
+# The Flask class has methods and attributes that define the behavior of your app.
 
-@app.get("/")          # Flask decorator that maps HTTP methods and resources (routes) to view functions
-# The @app.get("/") decorator is used to define a route for the root URL ("/") of the application.
-# It is a wrapper function that takes a function as an argument and returns a new function.
-# The function is called a view function and is responsible for handling requests to that URL.
-def profile():        # View Function
-    me= {             # Python Dictionary to represent the profile
+app = Flask(__name__)  # ✅ Create an instance of the Flask class (app is now an object)
+# All properties and methods of the Flask class are now available to the 'app' object.
+# __name__ is a special (magic/thunder) built-in variable in Python that represents the name of 
+# the current module being executed. If the script is run directly, __name__ == '__main__'
+
+@app.get("/")  # ✅ Flask decorator that maps HTTP GET requests for the root URL ("/") to the view function below
+# The @app.get("/") decorator is a wrapper function that takes 'profile' as input and returns a new wrapped function.
+# This route handles the homepage or base URL of your web application.
+
+def profile():  # ✅ This is a view function — it gets called when someone visits the root URL
+    me = {  # ✅ Python dictionary representing a user profile
         "first_name": "Koiree",
         "last_name": "Descoteaux",
-        "hobbies": "reading", "cooking", "hiking",
+        "hobbies": ["reading", "cooking", "hiking"],
         "is_online": True,
     }
-    return me # Return the dictionary automatically converts it to as a JSON response. 
+
+    # ✅ Flask automatically converts dictionaries to JSON responses when returned from a view function
+    return me
