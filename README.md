@@ -4,7 +4,7 @@
 
 ### 📝 Overview
 
-This project is part of **Class 1** in the Full Stack Development Immersion program. It introduces foundational concepts in Flask, Git, and SSH through the creation of a simple web application. The app is designed to demonstrate how to:
+This project is part of **111: Class 1** in the Full Stack Development Immersion program. It introduces foundational concepts in Flask, Git, and SSH through the creation of a simple web application. The app is designed to demonstrate how to:
 
 - Structure a Flask project using best practices
 - Create and test HTTP GET routes
