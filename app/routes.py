@@ -25,7 +25,7 @@ def profile():
     me = {
         "first_name": "Koiree",
         "last_name": "Descoteaux",
-        "hobbies": ["reading", "cooking", "hiking"],
+        "hobbies": ["Reading", "cooking", "hiking"],
         "is_online": True,
     }
 
