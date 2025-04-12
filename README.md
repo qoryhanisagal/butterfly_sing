@@ -97,6 +97,6 @@ From there, use:
 
 ---
 
-## 📁 Files in This Branch
+## 📁 Relevant Files in This Branch
 
 - `setup.sql`: Full database schema, data inserts, queries, and report logic for this challenge
